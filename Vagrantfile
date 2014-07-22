@@ -12,6 +12,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # If you're using vagrant-vbguest to keep your virtualbox additions up-to-date, you can uncomment this line,
   # then provision this VM, then comment the line out so virtualbox-vbguest runs and uses the cache.
-  config.vbguest.auto_update = false
+  #config.vbguest.auto_update = false
 
 end
