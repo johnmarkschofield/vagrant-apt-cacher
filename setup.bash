@@ -11,6 +11,7 @@ EOF
 
 apt-get install -y apt-cacher apache2
 grep -q "^allowed_hosts" /etc/apt-cacher/apt-cacher.conf || echo "allowed_hosts = *" >> /etc/apt-cacher/apt-cacher.conf
+grep -q "^package_files_regexp" /etc/apt-cacher/apt-cacher.conf || echo "package_files_regexp = (?:^[-+.a-z0-9]+[_-](?:\d:)?[-+.~a-zA-Z0-9]*(?:[_-]?(?:[-a-z0-9])*\.(?:u|d)?deb|\.dsc|\.tar(?:\.gz|\.bz2|\.xz)|\.diff\.gz)|\.rpm|index\.db-.+\.gz|\.jigdo|\.template)$" >> /etc/apt-cacher/apt-cacher.conf
 
 service apt-cacher restart
 service apache2 restart
